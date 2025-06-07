@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E4U SOLUTION – Creative Tools & Career Services</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc; /* A very light gray for the body background */
+        }
+        .hero-section {
+            background-image: linear-gradient(rgba(49, 46, 229, 0.6), rgba(124, 58, 237, 0.7)), url('https://placehold.co/a0aec0/ffffff?text=');
+            background-size: cover;
+            background-position: center;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .testimonial-card {
+            background-color: white;
+        }
+        .ai-feature textarea {
+            resize: vertical;
+        }
+         /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; /* 10% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 600px;
+            border-radius: 10px;
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">E4U SOLUTION</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-indigo-600">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-indigo-600">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-600">About</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600">Contact</a>
+                <a href="https://wa.me/94788870108" target="_blank" class="text-green-500 hover:text-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.447-4.435-9.884-9.888-9.884-5.448 0-9.886 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.794.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#home" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50">Home</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50">Services</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50">About</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-indigo-50">Contact</a>
+            <a href="https://wa.me/94788870108" class="block py-2 px-4 text-sm text-green-500 hover:bg-indigo-50">Chat on WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section text-white h-[80vh] flex items-center justify-center">
+            <div class="text-center p-6">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">E4U SOLUTION</h1>
+                <h2 class="text-2xl md:text-4xl font-semibold mb-4 drop-shadow-lg">Creative Tools & Career Services</h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 drop-shadow-md">Helping students and job seekers stand out with powerful digital tools and professional document crafting.</p>
+                <a href="https://wa.me/94788870108" target="_blank" class="cta-button bg-white text-indigo-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100">
+                    Chat on WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service 1: Canva Pro -->
+                    <div class="service-card text-center p-8 bg-gray-50 rounded-lg shadow-sm">
+                        <div>
+                            <div class="mb-4 inline-block p-4 bg-purple-100 rounded-full">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-palette-fill text-purple-600" viewBox="0 0 16 16">
+                                    <path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-15.032 4.14C.402 12.29 1.76 13.41 3.433 13.93c1.553.473 3.395.165 4.567-.847.848-.748 1.545-1.993 2.133-3.328a4.13 4.13 0 0 1 .494-1.028c.396-.71 1.058-1.258 1.8-1.34V6.62a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 .5.5v.19c.742.082 1.404.63 1.8 1.34.195.35.358.71.494 1.028.588 1.335 1.285 2.58 2.133 3.328.647.57 1.353.94 2.107 1.218a.5.5 0 0 1 .168.647zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                               </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Canva Pro Account</h3>
+                            <p class="text-gray-600">Unlock premium features to create stunning designs for any project.</p>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#contact" class="cta-button bg-purple-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-purple-700">Get Account</a>
+                        </div>
+                    </div>
+                    <!-- Service 2: ATS-Friendly CV -->
+                    <div class="service-card text-center p-8 bg-gray-50 rounded-lg shadow-sm">
+                        <div>
+                            <div class="mb-4 inline-block p-4 bg-blue-100 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-earmark-person-fill text-blue-600" viewBox="0 0 16 16">
+                                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-9 8c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">ATS-Friendly CV Creation</h3>
+                            <p class="text-gray-600">Get a professional CV optimized to pass through applicant tracking systems.</p>
+                        </div>
+                         <div class="ai-feature mt-6">
+                            <textarea id="cv-job-desc" class="w-full p-2 border rounded-md" rows="3" placeholder="Paste job description here..."></textarea>
+                            <button id="generate-cv-btn" class="cta-button bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 mt-2">
+                                ✨ Generate CV Ideas
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Service 3: Cover Letter -->
+                    <div class="service-card text-center p-8 bg-gray-50 rounded-lg shadow-sm">
+                       <div>
+                            <div class="mb-4 inline-block p-4 bg-indigo-100 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-envelope-paper-fill text-indigo-600" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M6.5 9.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2.5 1a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Professional Cover Letter</h3>
+                            <p class="text-gray-600">Make a great first impression with a compelling, tailor-made cover letter.</p>
+                       </div>
+                        <div class="ai-feature mt-6">
+                            <textarea id="cl-job-desc" class="w-full p-2 border rounded-md" rows="3" placeholder="Paste job description here..."></textarea>
+                            <textarea id="cl-user-skills" class="w-full p-2 border rounded-md mt-2" rows="3" placeholder="Briefly list your key skills and experiences..."></textarea>
+                            <button id="generate-cl-btn" class="cta-button bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 mt-2">
+                                ✨ Draft Cover Letter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Us Section -->
+        <section id="about" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="md:flex md:items-center md:space-x-12">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose E4U SOLUTION?</h2>
+                        <p class="text-gray-600 mb-6">
+                            Our mission is to empower students and young professionals by providing affordable access to essential digital tools and high-quality career services. We believe that everyone deserves a chance to showcase their skills and land their dream job. We're here to bridge the gap, offering the support you need to succeed in a competitive world.
+                        </p>
+                         <a href="#contact" class="cta-button bg-indigo-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-indigo-700">
+                            Get Started
+                        </a>
+                    </div>
+                    <div class="md:w-1/2 mt-8 md:mt-0">
+                        <img src="https://placehold.co/600x400/e0e7ff/3730a3?text=Our+Mission" alt="Team collaborating" class="rounded-lg shadow-lg w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-20 bg-indigo-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Our Clients Say</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/50x50/c7d2fe/3730a3?text=A" alt="User" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">Ali R.</p>
+                                <div class="flex text-yellow-400">
+                                    ★★★★★
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"The ATS-friendly CV was a game-changer! I started getting interview calls right away. Highly recommended!"</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/50x50/ddd6fe/4f46e5?text=S" alt="User" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">Sara K.</p>
+                                <div class="flex text-yellow-400">
+                                    ★★★★★
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"Canva Pro access at such a great price is amazing for a student like me. The service was fast and reliable."</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card p-6 rounded-lg shadow-md">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/50x50/c4b5fd/6d28d9?text=J" alt="User" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-bold">John D.</p>
+                                <div class="flex text-yellow-400">
+                                    ★★★★★
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic">"The cover letter was professionally written and perfectly highlighted my skills. Excellent communication from the team."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Get in Touch</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-xl mx-auto">Have questions or ready to get started? Send us a message!</p>
+                <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-md">
+                    <div class="md:flex md:items-center md:justify-between">
+                        <div class="text-center md:text-left mb-6 md:mb-0">
+                            <h3 class="text-2xl font-semibold text-indigo-600">Contact us directly on WhatsApp</h3>
+                            <p class="text-xl text-gray-700 mt-2">
+                                <a href="https://wa.me/94788870108" class="flex items-center justify-center md:justify-start hover:underline">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.447-4.435-9.884-9.888-9.884-5.448 0-9.886 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.794.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                                    +94 78 887 0108
+                                </a>
+                            </p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            <a href="https://wa.me/94788870108" target="_blank" class="cta-button bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-green-600 inline-block">
+                                Chat Now
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Optional Contact Form Layout -->
+                    <div class="mt-10 border-t pt-8">
+                         <h3 class="text-lg font-semibold text-center text-gray-700 mb-6">Or Send Us a Message</h3>
+                         <form action="#" method="POST">
+                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                 <div>
+                                     <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                     <input type="text" name="name" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Your Name">
+                                 </div>
+                                 <div>
+                                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                     <input type="email" name="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="you@example.com">
+                                 </div>
+                                 <div class="md:col-span-2">
+                                      <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                                      <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="How can we help you?"></textarea>
+                                 </div>
+                             </div>
+                             <div class="text-center mt-6">
+                                <button type="submit" class="cta-button bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-indigo-700">
+                                    Send Message
+                                </button>
+                             </div>
+                         </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="md:flex md:justify-between items-center text-center md:text-left">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold">E4U SOLUTION</a>
+                    <p class="text-gray-400 mt-2">Empowering Your Career Journey.</p>
+                </div>
+                <div class="flex justify-center space-x-6 mb-6 md:mb-0">
+                     <a href="#" class="text-gray-400 hover:text-white"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M..."></path></svg></a>
+                     <!-- Add other social icons -->
+                </div>
+                <div>
+                     <a href="https://wa.me/94788870108" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full inline-flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
+                        Message us on WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 E4U SOLUTION. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- AI Result Modal -->
+    <div id="ai-result-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modal-title" class="text-2xl font-bold mb-4">AI Generated Content</h3>
+        <div id="modal-body" class="text-gray-700 whitespace-pre-wrap"></div>
+        <button id="copy-text-btn" class="cta-button bg-indigo-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-indigo-700 mt-4">Copy Text</button>
+      </div>
+    </div>
+
+
+    <script>
+        // JavaScript for mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Gemini API Interaction
+        const generateCvBtn = document.getElementById('generate-cv-btn');
+        const generateClBtn = document.getElementById('generate-cl-btn');
+        const cvJobDesc = document.getElementById('cv-job-desc');
+        const clJobDesc = document.getElementById('cl-job-desc');
+        const clUserSkills = document.getElementById('cl-user-skills');
+        
+        const modal = document.getElementById('ai-result-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const closeBtn = document.querySelector('.close-button');
+        const copyTextBtn = document.getElementById('copy-text-btn');
+
+        // Close modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // Copy text from modal
+        copyTextBtn.onclick = function() {
+            const textToCopy = modalBody.innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            alert('Copied to clipboard!');
+        }
+
+
+        async function callGemini(prompt, buttonElement) {
+            const originalButtonText = buttonElement.innerHTML;
+            buttonElement.innerHTML = '✨ Generating...';
+            buttonElement.disabled = true;
+
+            try {
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Keep this empty
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                let text = 'No content generated. Please try again.';
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    text = result.candidates[0].content.parts[0].text;
+                }
+                
+                return text;
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                return "An error occurred. Please check the console for details.";
+            } finally {
+                 buttonElement.innerHTML = originalButtonText;
+                 buttonElement.disabled = false;
+            }
+        }
+        
+        function showModal(title, content) {
+            modalTitle.innerText = title;
+            modalBody.innerText = content;
+            modal.style.display = "block";
+        }
+
+        generateCvBtn.addEventListener('click', async () => {
+            const jobDesc = cvJobDesc.value.trim();
+            if (!jobDesc) {
+                alert('Please paste the job description first.');
+                return;
+            }
+            const prompt = `Based on the following job description, generate 5-7 key skills and a compelling professional summary (2-3 sentences) for a CV. Format the output clearly with headings for "Key Skills" and "Professional Summary".\n\nJob Description:\n${jobDesc}`;
+            
+            const result = await callGemini(prompt, generateCvBtn);
+            showModal("✨ AI-Generated CV Ideas", result);
+        });
+
+        generateClBtn.addEventListener('click', async () => {
+            const jobDesc = clJobDesc.value.trim();
+            const userSkills = clUserSkills.value.trim();
+
+            if (!jobDesc || !userSkills) {
+                alert('Please provide both the job description and your skills.');
+                return;
+            }
+            const prompt = `Draft a professional and concise cover letter based on the following job description and user skills. The tone should be confident and tailored to the role. Address it to "Hiring Manager".\n\nJob Description:\n${jobDesc}\n\nMy Skills/Experience:\n${userSkills}`;
+
+            const result = await callGemini(prompt, generateClBtn);
+            showModal("✨ AI-Generated Cover Letter Draft", result);
+        });
+
+    </script>
+</body>
+</html>
